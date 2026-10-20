@@ -46,14 +46,14 @@ xattr -dr com.apple.quarantine /Applications/kknow.app
 
 ## Release a new version
 
-The cask downloads the `.dmg` file for the Mac architecture from the
+The cask downloads the `.dmg` file for Apple Silicon from the
 [releases of kknow](https://github.com/akuchin/kknow/releases). The release
-workflow of kknow makes these files. The names must be
-`kknow_<version>_aarch64.dmg` (Apple Silicon) and `kknow_<version>_x64.dmg`
-(Intel), and the tag must be `v<version>`.
+workflow of kknow makes this file. The name must be
+`kknow_<version>_aarch64.dmg`, and the tag must be `v<version>`. There is no
+build for Intel Macs, so the cask requires Apple Silicon.
 
-After a new release, update `version` and the two `sha256` values in
-[`Casks/kknow.rb`](Casks/kknow.rb). GitHub shows the digest of each file:
+After a new release, update `version` and `sha256` in
+[`Casks/kknow.rb`](Casks/kknow.rb). GitHub shows the digest of the file:
 
 ```bash
 gh api repos/akuchin/kknow/releases/latest --jq '.assets[] | select(.name | endswith(".dmg")) | "\(.name) \(.digest)"'
