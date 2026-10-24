@@ -12,6 +12,10 @@ cask "kknow" do
     strategy :github_latest
   end
 
+  # The app updates itself (Settings → General). Thus `brew upgrade` skips it,
+  # as for Zed and Sublime, and does not fight the app over the version.
+  # `brew upgrade --greedy` still updates it.
+  auto_updates true
   # The kknow releases have no build for Intel Macs.
   depends_on arch: :arm64
   depends_on :macos
