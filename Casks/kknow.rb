@@ -1,6 +1,6 @@
 cask "kknow" do
-  version "0.3.1"
-  sha256 "11ef620220fffa2bde6ca89d54affbab9dd2d64462a34790864718b5cdb0b8de"
+  version "0.4.0"
+  sha256 "c0f75ae32eaa316561331590b2d3f31524d6aa5bdace45c8ea705a46980a1034"
 
   url "https://github.com/akuchin/kknow/releases/download/v#{version}/kknow_#{version}_aarch64.dmg"
   name "kknow"
